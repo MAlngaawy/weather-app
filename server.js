@@ -2,7 +2,8 @@
 projectData = {};
 
 // Require Express to run server and routes
-const express = require('express.js')
+const express = require('express')
+const bodyParser = require('body-parser')
 // Start up an instance of app
 const app = express()
 
@@ -20,3 +21,8 @@ app.use(express.static('website'));
 
 
 // Setup Server
+//set app the post
+const port = 8000
+app.listen(port, () => {
+  console.log("LOL It's work")
+})
