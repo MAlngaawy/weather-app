@@ -1,14 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = [
-  {
-    name : 'One',
-    number: 1
-  },
-  {
-    name : 'Two',
-    number: 2
-  }
-];
+projectData = {}
 
 // Require Express to run server and routes
 const express = require('express')
@@ -46,10 +37,7 @@ app.get('/getData', (req, res) => {
 
 // Return Endpoint Data
 app.post('/postData', (req, res) => {
-  console.log(req.body.name)
-  const fil = projectData.filter( obj => {
-    return obj.name == req.body.name
-  })
-  console.log(fil)
-  res.send(fil)
+  projectData = req.body
+  console.log(projectData)
+  res.send(projectData)
 })
