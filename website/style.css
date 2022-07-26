@@ -4,19 +4,21 @@ body{
 }
 
 #app{
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
+    height: 100vh;
+    /* display: grid; */
+    /* grid-auto-rows: minmax(150px, auto); */
     /* grid-template-columns:  */
-    background: #f23557;
-    color: #f0d43a;
-    justify-content: center;
-    grid-gap: 1em;
+    background: #acc6ff;
+    color: #000000;
+    /* justify-content: center; */
+    /* grid-gap: 1em; */
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    text-align: center;
 }
 
 .holder{
-
+    
 }
 
 .entry{
@@ -56,8 +58,8 @@ input{
     display:block;
     height: 60px;
     width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
+    background:#a1b1b6;
+    color: #000000;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
@@ -72,6 +74,7 @@ button{
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
+    display: block;
 }
 h1{
     font-size: 36px;
