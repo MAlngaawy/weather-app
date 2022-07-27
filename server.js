@@ -30,7 +30,7 @@ app.listen(port, () => {
 
 // Return Endpoint Data
 app.get('/getData', (req, res) => {
-  console.log("getObj Called")
+  console.log("get will send projectData")
   res.send(projectData)
 })
 
