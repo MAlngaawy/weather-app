@@ -24,13 +24,12 @@ app.use(express.static('website'));
 //set app the post
 const port = 8000
 app.listen(port, () => {
-  console.log("LOL It's work")
+  console.log("It's work")
 })
 
 
 // Return Endpoint Data
 app.get('/getData', (req, res) => {
-  console.log("get will send projectData")
   res.send(projectData)
 })
 
@@ -38,7 +37,6 @@ app.get('/getData', (req, res) => {
 // Return Endpoint Data
 app.post('/postData', (req, res) => {
   projectData = req.body
-  console.log(projectData)
   res.send(projectData)
 })
 
