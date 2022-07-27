@@ -41,3 +41,8 @@ app.post('/postData', (req, res) => {
   console.log(projectData)
   res.send(projectData)
 })
+
+// get all data route
+app.get('/all', (req, res) => {
+  res.send(projectData)
+})
