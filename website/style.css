@@ -1,32 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 body{
     background: #fffff8;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #app{
-    height: 100vh;
-    /* display: grid; */
-    /* grid-auto-rows: minmax(150px, auto); */
-    /* grid-template-columns:  */
-    background: #acc6ff;
+    background: #eee;
     color: #000000;
-    /* justify-content: center; */
-    /* grid-gap: 1em; */
     font-size: 20px;
-    font-family: 'Oswald', sans-serif;
     text-align: center;
+    padding: 50px 0
 }
 
 .holder{
-    
+    margin: 10px auto
 }
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    text-align: left;
 }
 
-#entryHolder{
-
+#entryHolder div{
+    margin: 5px 0;
 }
 
 #date{
@@ -54,41 +54,36 @@ label{
     font-size: 27px;
 }
 
-input{
+input, textarea{
     display:block;
-    height: 60px;
     width: 320px;
-    background:#a1b1b6;
+    background:#fff;
+    border: 1px solid #efefef;
     color: #000000;
     font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    margin: 20px auto
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px 
 }
 
 button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
+    width: auto;
+    height: auto;
+    padding: 10px 30px;
+    border-radius: 6px;
+    background: #4569a7;
+    color: #fff;
+    box-shadow: none;
+    font-weight: bold;
+    letter-spacing: 1px;
     border: none;
-    box-shadow: 2px 4px 5px #444;
-    display: block;
-    margin: 20px auto;
+    margin: 10px 0;
     cursor: pointer
 }
 h1{
     font-size: 36px;
 }
 
-textarea{
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-}
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
@@ -98,19 +93,14 @@ button:focus {
 }
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+    color: #eee; 
 
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
     color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
-
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
     color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
-
 } 
