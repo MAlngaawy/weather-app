@@ -34,7 +34,7 @@ const postMethod =  async (paseUrl) => {
     headers: {
         'Content-Type': 'application/json',
     },
-    body: JSON.stringify({date: newDate, feelings: textArea.value , temp : temp }),
+    body: JSON.stringify({date: newDate, feel: textArea.value , temp : temp }),
   })
   try {
     const data = await res.json()
@@ -45,6 +45,23 @@ const postMethod =  async (paseUrl) => {
   }
 }
 
+// function to get all data
+const retrieveData = async () =>{
+  const request = await fetch('http://localhost:8000/all');
+  try {
+  // Transform into JSON
+  const allData = await request.json()
+  console.log(allData)
+  // Write updated data to DOM elements
+  document.getElementById('temp').innerHTML = Math.round(allData.temp)+ 'degrees';
+  document.getElementById('content').innerHTML = allData.feel;
+  document.getElementById("date").innerHTML =allData.date;
+  }
+  catch(error) {
+    console.log("error", error);
+    // appropriately handle the error
+  }
+ }
 
 generateBtn.addEventListener('click', (e) => {
   e.preventDefault()
@@ -54,6 +71,7 @@ generateBtn.addEventListener('click', (e) => {
     temp = data.main.temp
     console.log(temp)
     postMethod("http://localhost:8000/postData")
+    retrieveData()
   })
   .catch(err => console.log(err.message))
 })
