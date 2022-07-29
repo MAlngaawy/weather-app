@@ -5,8 +5,13 @@ const input = document.getElementById('zip')
 const textArea = document.getElementById('feelings')
 let temp = 0
 
-const server = process.env.server
+window.process = {
+  env: {
+      NODE_ENV: 'development'
+  }
+}
 
+const server = process.env.NODE_ENV == 'development' ? 'http://localhost:8000' : 'https://weather-app-mo.herokuapp.com'
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + 1 +'.'+ d.getDate()+'.'+ d.getFullYear();
@@ -15,12 +20,6 @@ let newDate = d.getMonth() + 1 +'.'+ d.getDate()+'.'+ d.getFullYear();
 const getMethod = async (paseUrl) => {
   return res = await fetch(paseUrl)
 }
-
-// // get function that get the endpoint projectData
-// getMethod(`http://localhost:8000/getData`)
-// .then(res => res.json())
-// .then(data => console.log(data))
-// .catch(err => console.log(err))
 
 
 const postMethod =  async (paseUrl) => {
@@ -43,7 +42,7 @@ const postMethod =  async (paseUrl) => {
 
 // function to get all data
 const retrieveData = async () =>{
-  fetch('http://localhost:8000/all')
+  fetch(`${server}/all`)
   .then(res => res.json())
   .then(data => {
     const allData = data;
