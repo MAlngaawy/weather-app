@@ -67,10 +67,9 @@ generateBtn.addEventListener('click', (e) => {
   .then(res => res.json())
   .then(data => {
     temp = data.main.temp
-    
     //call the post method that will send the data to the server
     postMethod(`${server}/postData`)
-
+  }).then(() => {
     // call the get method that will bring the opject from the server
     retrieveData()
   })
