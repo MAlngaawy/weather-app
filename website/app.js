@@ -35,7 +35,6 @@ const postMethod =  async (paseUrl) => {
   })
   try {
     const data = await res.json()
-    console.log(data)
     return data
   } catch {
     console.log("error")
@@ -69,9 +68,9 @@ generateBtn.addEventListener('click', (e) => {
     temp = data.main.temp
     //call the post method that will send the data to the server
     postMethod(`${server}/postData`)
-  }).then(() => {
-    // call the get method that will bring the opject from the server
-    retrieveData()
+    .then((res) => {
+      retrieveData()
+    })
   })
   .catch(err => console.log(err.message))
 })
