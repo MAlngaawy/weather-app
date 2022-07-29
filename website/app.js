@@ -4,6 +4,8 @@ const generateBtn = document.getElementById('generate')
 const input = document.getElementById('zip')
 const textArea = document.getElementById('feelings')
 let temp = 0
+const local = 'http://localhost:8000'
+const production = 'https://weather-app-mo.herokuapp.com'
 
 window.process = {
   env: {
@@ -11,7 +13,7 @@ window.process = {
   }
 }
 
-const server = process.env.NODE_ENV == 'development' ? 'http://localhost:8000' : 'https://weather-app-mo.herokuapp.com'
+const server = process.env.NODE_ENV == 'development' ? local : production
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + 1 +'.'+ d.getDate()+'.'+ d.getFullYear();
@@ -67,7 +69,7 @@ generateBtn.addEventListener('click', (e) => {
     temp = data.main.temp
     
     //call the post method that will send the data to the server
-    postMethod("http://localhost:8000/postData")
+    postMethod(`${server}/postData`)
 
     // call the get method that will bring the opject from the server
     retrieveData()
