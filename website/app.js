@@ -41,20 +41,17 @@ const postMethod =  async (paseUrl) => {
 
 // function to get all data
 const retrieveData = async () =>{
-  const request = await fetch('http://localhost:8000/all');
-  try {
-  // Transform into JSON
-  const allData = await request.json()
-  console.log(allData)
-  // Write updated data to DOM elements
-  document.getElementById('temp').innerHTML = 'Degree: ' + Math.round(allData.temp)+ ' degrees';
-  document.getElementById('content').innerHTML = "Feelings : " + allData.feel;
-  document.getElementById("date").innerHTML = 'Today Date: ' + allData.date;
-  }
-  catch(error) {
-    console.log("error", error);
-    // appropriately handle the error
-  }
+  fetch('http://localhost:8000/all')
+  .then(res => res.json())
+  .then(data => {
+    const allData = data;
+    console.log(allData)
+    // Write updated data to DOM elements
+    document.getElementById('temp').innerHTML = 'Degree: ' + Math.round(allData.temp)+ ' degrees';
+    document.getElementById('content').innerHTML = "Feelings : " + allData.feel;
+    document.getElementById("date").innerHTML = 'Today Date: ' + allData.date;
+  })
+  .catch(err => console.log(err))
  }
 
  // handle button click function
