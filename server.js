@@ -1,3 +1,11 @@
+//With this code, we’ll only load the .env file if the server isn’t already in production mode.
+console.log('No value for FOO yet:', process.env.FOO);
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+console.log('Now the value for FOO is:', process.env.FOO);
 // Setup empty JS object to act as endpoint for all routes
 projectData = {}
 
@@ -44,5 +52,3 @@ app.post('/postData', (req, res) => {
 app.get('/all', (req, res) => {
   res.send(projectData)
 })
-
-console.log(process.env)
