@@ -44,3 +44,5 @@ app.post('/postData', (req, res) => {
 app.get('/all', (req, res) => {
   res.send(projectData)
 })
+
+console.log(process.env)
